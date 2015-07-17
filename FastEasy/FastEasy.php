@@ -1,12 +1,23 @@
 <?php
 
 
+require_once('FastEasy/global.php');
 
+
+
+
+//路由解析跳转规则
 $a = explode('/',$_SERVER[PATH_INFO]);
 if(!$a['1']) $a['1'] = 'Index';
 require_once("APP/Controller/".$a['1']."Controller.class.php");
 if(!$a['2']) $a['2'] = 'index';
-call_user_func($a['2'].'Action');
+call_user_func($a['2'].'Action',$smarty);
+
+
+
+
+
+
 
 
 
