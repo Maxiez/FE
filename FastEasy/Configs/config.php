@@ -8,7 +8,7 @@ $mydbcharset="UTF8";
 
 //=======================
 $smarty_template_dir    ='APP/View/';
-$smarty_compile_dir     ='APP/Runtime/Template_c/';
+$smarty_compile_dir     ='APP/View/Template_c/';
 $smarty_config_dir    ='FastEasy/Configs/';
 $smarty_cache_dir     ='APP/Runtime/Cache/';
 $smarty_caching       =FALSE;
