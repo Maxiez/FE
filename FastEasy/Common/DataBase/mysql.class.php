@@ -26,15 +26,7 @@ class mysql {
 		$this->connect();
 	}
 
-	public function M($sql){
-		$query = $this->query($sql);
-		while($back[] = $this->fetch_array($query)){
-			
-		};
-
-		array_pop($back);
-		return $back;
-	}
+	
 
 	/*数据库连接*/
 	public function connect() {
@@ -59,7 +51,14 @@ class mysql {
 		if ($sql == "") {
 			$this->show_error("SQL语句错误：", "SQL查询语句为空");
 		}
-		$this->sql = $sql;
+		$sql = $this->inject_check($sql);
+		if($sql){
+			$this->sql = $sql;
+		}
+		else
+		{
+			exit('SQL_str error!');
+		}
 
 		$result = mysql_query($this->sql, $this->conn);
 
@@ -407,7 +406,7 @@ class mysql {
 		$check = eregi('select|insert|update|delete|\'|\/\*|\*|\.\.\/|\.\/|union|into|load_file|outfile', $sql_str);
 		if ($check) {
 			echo "输入非法注入内容！";
-			exit ();
+			return false;
 		} else {
 			return $sql_str;
 		}

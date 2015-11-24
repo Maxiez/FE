@@ -4,7 +4,7 @@ $mydbhost   = "localhost";
 $mydbuser   = "root";
 $mydbpw     ="";
 $mydbname   ="news_php100";
-$mydbcharset="GBK";
+$mydbcharset="UTF8";
 
 //=======================
 $smarty_template_dir    ='APP/View/';

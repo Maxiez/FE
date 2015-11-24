@@ -1,17 +1,25 @@
 <?php
 
+class IndexController extends FEdex_Action
+{
 
-function indexAction($smarty){
-	echo "INDEX";
+	public function indexAction()
+	{
+		echo "INDEX";
 
-	$smarty->display("Index/index.html");
-	//$smarty->assign("t_dir",$smarty_template_dir );
+		var_dump($this->view);
 
+		// $this->view->display("Index/index.html");
+		// $this->view->assign("t_dir",'11111');
+
+	}
+		
+	public function testAction(){
+
+		echo 'test';
+	}
 }
-	
-function testAction(){
 
-	echo 'test';
-}
+
 
 ?>
