@@ -7,20 +7,20 @@ require_once('FastEasy/global.php');
 
 
 //路由解析跳转规则
-$a = explode('/',$_SERVER[PATH_INFO]);
-if(!$a['1']) $a['1'] = 'Index';
-require_once("APP/Controller/".$a['1']."Controller.class.php");
-if(!$a['2']) $a['2'] = 'index';
+$url_arr = explode('/',$_SERVER[PATH_INFO]);
+$class_name = $url_arr['1'];
+$action_name = $url_arr['2'];
+if(!$class_name) $class_name = 'Index';
+require_once("APP/Controller/".$class_name."Controller.class.php");
+if(!$action_name) $action_name = 'index';
 
-$classname = $a['1']."Controller";
-// echo $a['1'].'Controller'.PHP_EOL;
-// echo $a['2'].'Action'.PHP_EOL;
+$class_full_name = $class_name."Controller";
+$action_full_name = $action_name.'Action';
 
- $b = new $classname();
+$page_object = new $class_full_name($class_name,$action_name);
+$page_object->$action_full_name();
 
-call_user_func(array($a['1'].'Controller',$a['2'].'Action'));
 
-echo '3333';
 
 
 

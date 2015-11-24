@@ -7,10 +7,10 @@ class IndexController extends FEdex_Action
 	{
 		echo "INDEX";
 
-		var_dump($this->view);
+	
 
-		// $this->view->display("Index/index.html");
-		// $this->view->assign("t_dir",'11111');
+
+		$this->view->assign("string",'11111');
 
 	}
 		

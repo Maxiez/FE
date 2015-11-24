@@ -11,11 +11,10 @@ require_once ('FastEasy/Configs/config.php');
 require_once ('FastEasy/Common/DataBase/mysql.class.php');
 require_once ('FastEasy/Common/global.func.php');
 require_once ('FastEasy/FEBase/BaseController.class.php');
-//require_once ('./common/action.class.php');
 
 
 
-//$db = new action($mydbhost,$mydbuser,$mydbpw,$mydbname,ALL_PS,$mydbcharset);
+$db = new action($mydbhost,$mydbuser,$mydbpw,$mydbname,ALL_PS,$mydbcharset);
 
 //smarty
 // $smarty=new smarty();
